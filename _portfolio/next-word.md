@@ -2,7 +2,7 @@
 title: "Web App - Predict the Next Word"
 excerpt: "Web application project that predicts the next word based on previous text input."
 header:
-  teaser: next-word.png
+  teaser: foo-bar-identity-th.jpg
 ---
 
 This project is a wep application that predicts the next word based on previous text input.
