@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Data Science"
+title                    : "ricardoscr"
 title_separator          : "-"
 name                     : "Ricardo Carvalho"
 description              : "A blog with a lot of practical views of data science. Ranging from exploratory data analysis to machine learning, it covers many paths to unveil the data science world. The focus is the use of methods in a practical way, showing the code and explaining how it's done."
