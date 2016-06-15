@@ -13,7 +13,7 @@ name                     : "Ricardo Carvalho"
 description              : "A blog with a lot of practical views of data science. Ranging from exploratory data analysis to machine learning, it covers many paths to unveil the data science world. The focus is the use of methods in a practical way, showing the code and explaining how it's done."
 url                      : "http://ricardoscr.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-gh_repo                  :
+gh_repo                  : https://github.com/ricardoscr/ricardoscr.github.io/
 teaser                   : "big-data-science-wordcloud.jpeg" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -146,10 +146,10 @@ kramdown:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:title.html
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Sao_Paulo
 
 
 # Plugins
