@@ -1,11 +1,10 @@
 ---
 layout: single
-title: 'angular 2 - Template parse warnings: "#" inside of expressions is deprecated. Use "let" instead! (ngFor)'
-description: "woot"
-category: angular2
-tags: [angular2, angular]
+title: "Como usar Regressão Ridge, Lasso e Adaptive Lasso no R"
+category: R
+tags: [ridge, lasso, adaptive lasso, R]
 comments: true
-lang: en-US
+lang: pt-BR
 ---
 
 De uma maneira bem simples e direta ao ponto, vamos ver como executar no R os métodos Regressão Ridge, Lasso e Adaptive Lasso!
