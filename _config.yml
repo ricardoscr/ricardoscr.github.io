@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "ricardoscr"
 title_separator          : "-"
 name                     : "Ricardo Carvalho"
-description              : "A blog with a lot of practical views of data science. Ranging from exploratory data analysis to machine learning, it covers many paths to unveil the data science world. The focus is the use of methods in a practical way, showing the code and explaining how it's done."
+description              : "Practical data science made easy!"
 url                      : "http://ricardoscr.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 gh_repo                  : https://github.com/ricardoscr/ricardoscr.github.io/
