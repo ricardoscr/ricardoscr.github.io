@@ -1,0 +1,16 @@
+---
+layout: archive
+title: "Todos os Posts"
+permalink: /pt/
+author_profile: true
+---
+
+Todos os posts em português.
+
+{% include base_path %}
+
+<div class="grid__wrapper">
+  {% for post in site.posts %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
