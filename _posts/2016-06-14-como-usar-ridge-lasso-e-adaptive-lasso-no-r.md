@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Como usar Regressão Ridge, Lasso e Adaptive Lasso no R"
+title: "Regressão Ridge, Lasso e Adaptive Lasso no R"
 category: R
 tags: [ridge, lasso, adaptive lasso, R]
 comments: true
@@ -22,6 +22,7 @@ Para começar vamos mexer com a Regressão Ridge!
   * Using results of MMA_query combine data across fighters to summarize fighter vital stats and fight histories
   * Cleans up inconsistencies and summarizes results into a few high frequency classes
 
+---
 
 ## Lasso no R
 
@@ -31,6 +32,8 @@ Agora vamos mexer com o Lasso!
   * Aggregating over all fighters look at pairs of finishes that cooccur in individual fighters
   * Determine finishes that reproducibly / statistically-significantly cooccur
   * Generate a network-based summary of the relationship between finishes
+
+---
 
 
 ## Adaptive Lasso no R
