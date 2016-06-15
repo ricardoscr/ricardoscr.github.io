@@ -1,3 +1,8 @@
+---
+title: "Web App - Predict the Next Word"
+excerpt: "Web application project that predicts the next word based on previous text input."
+---
+
 # Predict the Next Word
 
 This project is a wep application that predicts the next word based on previous text input.
