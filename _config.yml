@@ -6,23 +6,21 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : en-US
-title                    : acdcjunior's
+locale                   : "en-US"
+title                    : "Data Science"
 title_separator          : "-"
-name                     : Antônio "acdc" Júnior
-description              : Programming and agile awesomeness
-url                      : http://acdcjunior.github.io
+name                     : "Ricardo Carvalho"
+description              : "A blog with a lot of practical views of data science. Ranging from exploratory data analysis to machine learning, it covers many paths to unveil the data science world. The focus is the use of methods in a practical way, showing the code and explaining how it's done."
+url                      : "http://ricardoscr.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-gh_repo                  : https://github.com/acdcjunior/acdcjunior.github.io/
-teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+gh_repo                  :
+teaser                   : "big-data-science-wordcloud.jpeg" # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", custom"
+  provider               : "disqus" # false (default), "disqus", "facebook", "google-plus", custom"
   disqus:
-    shortname            : acdcjunior # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
-  discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    shortname            : "ricardoscr" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
@@ -37,9 +35,9 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : acdcjunior
+  username               : ricardosc11
 facebook:
-  username               : 
+  username               : ricardoxr
   app_id                 :
   publisher              :
 og_image                 : # Open Graph/Twitter default site image
@@ -54,7 +52,7 @@ social:
 analytics:
   provider               : "google" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : UA-50217609-2
+    tracking_id          : UA-68601734-1
 
 # Google AdSense
 google_ad_client         :
@@ -63,30 +61,30 @@ google_ad_slot           :
 
 # Site Author
 author:
-  name             : Antônio "acdc" Júnior
-  avatar           : acdcjunior.jpg
-  bio              : A passionate programmer based in Brasília, Brasil. Interested in anything that would make our developer lives more awesome.
-  location         : 
-  email            : 
+  name             : "Ricardo Carvalho"
+  avatar           : "foto.jpg"
+  bio              : "Data crazy. Looking for data problems and new creative ways of solving them."
+  location         : "Brasília, Brasil"
+  email            :
   uri              :
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
-  facebook         : 
-  foursquare       :
-  github           : acdcjunior
-  google_plus      :
+  facebook         : ricardoxr
+  foursquare       : 
+  github           : ricardoscr
+  google_plus      : RicardoCarvalhoscr
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : ricardoscr
   pinterest        :
   soundcloud       :
-  stackoverflow    : 1850609/acdcjunior
+  stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : acdcjunior
+  twitter          : ricardosc11
   vine             :
   weibo            :
   xing             :
@@ -148,10 +146,10 @@ kramdown:
 
 
 # Outputting
-permalink: /:title.html
+permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: America/Sao_Paulo
+timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
@@ -181,10 +179,10 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
-category_archive:
+categories:
   type: liquid
   path: /categories/
-tag_archive:
+tags:
   type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
