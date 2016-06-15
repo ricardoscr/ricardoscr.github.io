@@ -14,4 +14,4 @@ Interested in all kinds of data science and machine learning applications.
 
 **Main contact**: ricardosc at gmail
 
-**Connect on LinkedIn**: https://www.linkedin.com/in/ricardoscr
+**Connect on LinkedIn**: [Light Outline Button](https://www.linkedin.com/in/ricardoscr){: .btn .btn--light-outline .btn--small}
