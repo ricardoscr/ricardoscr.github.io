@@ -10,15 +10,9 @@ mathjax: true
 
 De uma maneira bem simples e direta ao ponto, vamos ver como executar no R os métodos Regressão Ridge, Lasso e Adaptive Lasso!
 
-$$
-k_{n+1}
-
-n^2
-$$
-
+$$ k_{n+1} $$
 ok
-
-$ \sum_{i=1}^{10} t_i $
+$$ \sum_{i=1}^{10} t_i $$
 
 ---
 
