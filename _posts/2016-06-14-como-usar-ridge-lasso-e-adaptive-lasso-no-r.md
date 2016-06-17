@@ -7,6 +7,7 @@ comments: true
 lang: pt-BR
 mathjax: true
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 De uma maneira bem simples e direta ao ponto, vamos ver como executar no R os métodos Regressão Ridge, Lasso e Adaptive Lasso!
 
