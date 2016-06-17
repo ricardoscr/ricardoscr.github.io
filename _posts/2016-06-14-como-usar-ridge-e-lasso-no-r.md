@@ -6,8 +6,8 @@ tags: [ridge, lasso, adaptive lasso, R]
 comments: true
 lang: pt-BR
 mathjax: true
----
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+---
 
 De uma maneira bem simples e direta ao ponto, após uma breve introdução dos métodos, vamos ver como executar no R Regressão Ridge e Lasso!
 
@@ -29,7 +29,7 @@ Para executar Regressão Ridge no R, faremos uso do pacote glmnet, desenvolvido 
 require(glmnet)
 # Considerando que tenho um data frame de nome dados, sendo a primeira coluna a classe
 x <- as.matrix(dados[,-1]) # Remove classe
-y <- as.double(as.matrix(dados[, 1])) # Somente classse
+y <- as.double(as.matrix(dados[, 1])) # Somente classe
 set.seed(999)
 cv.ridge <- cv.glmnet(x, y, family='binomial', alpha=0, parallel=TRUE, standardize=TRUE, type.measure='auc')
 plot(cv.ridge)
@@ -62,7 +62,7 @@ Para executar Lasso no R, faremos uso do pacote glmnet, desenvolvido pelos próp
 require(glmnet)
 # Considerando que tenho um data frame de nome dados, sendo a primeira coluna a classe
 x <- as.matrix(dados[,-1]) # Remove classe
-y <- as.double(as.matrix(dados[, 1])) # Somente classse
+y <- as.double(as.matrix(dados[, 1])) # Somente classe
 cv.lasso <- cv.glmnet(x, y, family='binomial', alpha=1, parallel=TRUE, standardize=TRUE, type.measure='auc')
 plot(cv.lasso)
 plot(cv.lasso$glmnet.fit, xvar="lambda", label=TRUE)
