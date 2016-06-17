@@ -1,3 +1,4 @@
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 ---
 layout: single
 title: "Como usar Regressão Ridge e Lasso no R"
@@ -6,7 +7,6 @@ tags: [ridge, lasso, adaptive lasso, R]
 comments: true
 lang: pt-BR
 mathjax: true
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 ---
 
 De uma maneira bem simples e direta ao ponto, após uma breve introdução dos métodos, vamos ver como executar no R Regressão Ridge e Lasso!
