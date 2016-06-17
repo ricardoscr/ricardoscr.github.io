@@ -19,6 +19,7 @@ De uma maneira bem simples e direta ao ponto, após uma breve introdução dos m
 Regressão Ridge é um método de regularização que evita overfitting penalizando coeficientes grandes através da L2 Norm. Por isso, é também chamada de Regularização L2.
 
 Em uma regressão linear, na prática isso implica em minimizar SQE (Soma dos Quadrados dos Resíduos) ou RSS (Residual Sum of Squares) somado à L2 Norm. Dessa forma, buscamos minimizar:
+
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2 $$
 
 onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade, $$\beta_j$$ são os coeficientes estimados em quantidade $$p$$.
@@ -51,6 +52,7 @@ Agora vamos mexer com o Lasso! Lasso também é um método de regularização qu
 Esse método tem como grande diferencial o fato de poder encolher alguns dos coeficientes a exatamente zero, realizando, portanto, uma seleção de atributos com a regularização.
 
 Em uma regressão linear, na prática para o Lasso busca-se minimizar SQE (Soma dos Quadrados dos Resíduos) ou RSS (Residual Sum of Squares) somado à L1 Norm. Dessa forma, realizamos a minimização de:
+
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} |\beta_j| $$
 
 onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade, $$\beta_j$$ são os coeficientes estimados em quantidade $$p$$.
