@@ -21,7 +21,7 @@ Em uma regressão linear, na prática isso implica em minimizar SQE (Soma dos Qu
 
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2 $$
 
-onde $\lambda$ é o parâmetro de tuning ou ajuste da penalidade, $\beta_j$ são os coeficientes estimados em quantidade $p$.
+onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade, $$\beta_j$$ são os coeficientes estimados em quantidade $$p$$.
 
 Para executar Regressão Ridge no R, faremos uso do pacote glmnet, desenvolvido pelos próprios criadores dos algoritmos.
 
@@ -38,9 +38,9 @@ cv.ridge$lambda.1se
 coef(cv.ridge, s=cv.ridge$lambda.min)
 ```
 
-No código acima executamos regressão logística (perceba o family='binomial'), paralelizando (caso cluster ou cores tenham sido alocados previamente), internamente normalizando (é necessário para regularização mais adequada) e buscando observar medida de AUC (área sob curva ROC) nos resultados. Além disso, o método já executa 10-fold cross validation para escolher o melhor $\lambda$.
+No código acima executamos regressão logística (perceba o family='binomial'), paralelizando (caso cluster ou cores tenham sido alocados previamente), internamente normalizando (é necessário para regularização mais adequada) e buscando observar medida de AUC (área sob curva ROC) nos resultados. Além disso, o método já executa 10-fold cross validation para escolher o melhor $$\lambda$$.
 
-Ao final já passo alguns comandos úteis para verificação dos resultados, como exibição do gráfico dos resultados de AUC e valores de $\lambda$ mínimo (para AUC mínimo) e 1se (para AUC menor um desvio padrão do mínimo).
+Ao final já passo alguns comandos úteis para verificação dos resultados, como exibição do gráfico dos resultados de AUC e valores de $$\lambda$$ mínimo (para AUC mínimo) e 1se (para AUC menor um desvio padrão do mínimo).
 
 ---
 
