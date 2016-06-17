@@ -11,22 +11,36 @@ mathjax: true
 
 De uma maneira bem simples e direta ao ponto, vamos ver como executar no R os métodos Regressão Ridge, Lasso e Adaptive Lasso!
 
-$$ k_{n+1} $$
-ok
-$$ \sum_{i=1}^{10} t_i $$
-
 ---
 
 ## Regressão Ridge no R
 
-Para começar vamos mexer com a Regressão Ridge!
+Regressão Ridge é um método de regularização que evita overfitting penalizando coeficientes grandes através da L2 Norm. Por isso, é também chamada de Regularização L2.
 
-1. MMA_query.R:
-  * Summarizes html from individual fighters finding additional fighters via links to opponents and organizations
-  * Summarized vegas odds from fighters and their opponents
-2. MMA_makeDB.R:
-  * Using results of MMA_query combine data across fighters to summarize fighter vital stats and fight histories
-  * Cleans up inconsistencies and summarizes results into a few high frequency classes
+Em uma regressão linear, na prática isso implica em minimizar SQE (Soma dos Quadrados dos Resíduos) ou RSS (Residual Sum of Squares) somado à L2 Norm. Dessa forma, buscamos minimizar:
+
+$$ RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2 $$
+
+onde $\lambda$ é o parâmetro de tuning ou ajuste da penalidade, $\beta_j$ são os coeficientes estimados em quantidade $p$.
+
+Para executar Regressão Ridge no R, faremos uso do pacote glmnet, desenvolvido pelos próprios criadores dos algoritmos.
+
+```R
+require(glmnet)
+# Considerando que tenho um data frame de nome dados, sendo a primeira coluna a classe
+x <- as.matrix(dados[,-1]) # Remove classe
+y <- as.double(as.matrix(dados[, 1])) # Somente classse
+set.seed(999)
+cv.ridge <- cv.glmnet(x, y, family='binomial', alpha=0, parallel=TRUE, standardize=TRUE, type.measure='auc')
+plot(cv.ridge)
+cv.ridge$lambda.min
+cv.ridge$lambda.1se
+coef(cv.ridge, s=cv.ridge$lambda.min)
+```
+
+No código acima executamos regressão logística (perceba o family='binomial'), paralelizando (caso cluster ou cores tenham sido alocados previamente), internamente normalizando (é necessário para regularização mais adequada) e buscando observar medida de AUC (área sob curva ROC) nos resultados. Além disso, o método já executa 10-fold cross validation para escolher o melhor $\lambda$.
+
+Ao final já passo alguns comandos úteis para verificação dos resultados, como exibição do gráfico dos resultados de AUC e valores de $\lambda$ mínimo (para AUC mínimo) e 1se (para AUC menor um desvio padrão do mínimo).
 
 ---
 
