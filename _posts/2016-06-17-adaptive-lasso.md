@@ -47,9 +47,9 @@ onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade (definido atr
 
 Com $$\hat{\omega_j}$$ acabamos realizando uma regularização diferente para cada coeficiente, ou seja, esse vetor adapta a penalidade para cada coeficiente. O Vetor Adaptativo de Pesos é definido como:
 
-$$\hat{\omega_j} = \frac{1}{(\beta_j^{ini})^\gamma}$$
+$$\hat{\omega_j} = \frac{1}{(\hat{\beta_j}^{ini})^\gamma}$$
 
-Na equação acima $$\beta_j^{ini}$$ é uma estimativa inicial dos coeficientes, usualmente obtida através de <a href='http://ricardoscr.github.io/como-usar-ridge-e-lasso-no-r.html'>Regressão Ridge</a>. Assim o Adaptive lasso acaba penalizando mais coeficientes com estimativa inicial menor. 
+Na equação acima $$\hat{\beta_j}^{ini}$$ é uma estimativa inicial dos coeficientes, usualmente obtida através de <a href='http://ricardoscr.github.io/como-usar-ridge-e-lasso-no-r.html'>Regressão Ridge</a>. Assim o Adaptive lasso acaba penalizando mais coeficientes com estimativa inicial menor. 
 
 Já o $$\gamma$$ do vetor adaptativo de pesos é uma constante positiva para ajuste do vetor adaptativo de pesos, sendo que os autores sugerem os valores possíveis de 0.5, 1 e 2.
 
