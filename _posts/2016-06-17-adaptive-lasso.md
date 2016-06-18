@@ -8,7 +8,7 @@ lang: pt-BR
 mathjax: true
 ---
 
-Adaptive Lasso é uma evolução do Lasso. Vamos ver como ele aprimora o Lasso e um exemplo de código para executá-lo no R!
+Adaptive Lasso é uma evolução do Lasso. Vamos ver sucintamente como ele aprimora o Lasso e mostrar o código para executá-lo no R!
 
 ---
 
