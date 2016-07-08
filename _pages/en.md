@@ -10,7 +10,7 @@ author_profile: true
 All english posts.
 
 <ul class="post-list">
-  {% assign pages_list = "R" %}  
+  {% assign pages_list = R %}  
   {% for post in pages_list %}
     {% if post.title != null %}
     {% if group == null or group == post.group %}
