@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Como usar Regressão Ridge e Lasso no R"
-category: R, en-us
+category: R, pt-br
 tags: [ridge, lasso, R]
 comments: true
 lang: pt-BR
