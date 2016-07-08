@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Adaptive Lasso: O que é e como implementar no R"
-category: [R, en-us]
+category: [R, pt-br]
 tags: [ridge, lasso, adaptive lasso, R]
 comments: true
 lang: pt-BR
