@@ -9,15 +9,6 @@ author_profile: true
 
 All english posts.
 
----
-layout: pageminimal
-title: Category Index
-permalink: /categories/index.html
-title: Category Index
-tags: [Categories]
-description: "An archive of posts sorted by categories."
-
----
 
 {% for tag in site.categories %} 
   <h2 id="{{ tag[0] }}" style="color: #c91b26">{{ tag[0] | capitalize }}</h2>
