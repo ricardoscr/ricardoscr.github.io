@@ -9,15 +9,21 @@ gallery:
     alt: "Screenshot of the Application for the Monty Hall Simulation"
 ---
 
+## Motivation
+
 The Monty Hall Problem is a very interesting one and can be considered a probabilistic brain teaser. It can be defined as follows:
 
- Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+> Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
 
 Basically, after your first door choice, the host choses one door with a goat and asks if you want to change door. The main question is: what gives a higher probability of winning? switching door or not switching?
 
 The brain teaser comes when calculating the probability of winning after switching. Since we end up with two doors after the host opens one, people tend to think that the probability of winning is 1/2 by switching or not. But actually the probability of winning by switching is 2 times (2/3) bigger than the probability of winnning by not switching doors (1/3).
 
 In such cases where we might not be sure about the probabilities, a simulation might be useful to confirm our findings.
+
+---
+
+## Simulation
 
 The idea is to observe the differences of switching or not switching door choice after the host shows one of the three doors. We will see these differences in terms of distributions of probabilties, and also mean, standard error and variance of probabilities, for each scenario (switching and not switching).
 
