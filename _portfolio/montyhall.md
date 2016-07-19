@@ -31,9 +31,9 @@ For this simulation I created two apps and a report. The report shows all the co
 
 {% include gallery caption="Screenshot of the Application for the Monty Hall Simulation." %}
 
-The links for the apps and the report are below:
+The links for the apps and the report are below. All the code is shared on github.
 
-* Report for the simulation: <a href="http://rpubs.com/ricardosc/MontyHall/" target='_blank' class="btn btn--info btn--small">Monty Hall Simulation Report</a>
+* Report for the simulation: <a href="http://rpubs.com/ricardosc/MontyHall/" target='_blank' class="btn btn--warning btn--small">Monty Hall Simulation Report</a>
 * App for the simulation: <a href="https://ricardosc.shinyapps.io/MontyHallSim/" target='_blank' class="btn btn--info btn--small">Monty Hall Simulation App</a>
 * App for the game: <a href="https://ricardosc.shinyapps.io/MontyHallGame/" target='_blank' class="btn btn--info btn--small">Monty Hall Game App</a>
 
