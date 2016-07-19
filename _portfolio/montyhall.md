@@ -9,6 +9,10 @@ gallery:
     alt: "Screenshot of the Application for the Monty Hall Simulation"
 ---
 
+To understand this work we will see the motivation and the actual simulation with its results.
+
+---
+
 ## Motivation
 
 The Monty Hall Problem is a very interesting one and can be considered a probabilistic brain teaser. It can be defined as follows:
@@ -17,7 +21,6 @@ The Monty Hall Problem is a very interesting one and can be considered a probabi
 > You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. 
 > He then says to you, "Do you want to pick door No. 2?" 
 > Is it to your advantage to switch your choice?
-
 
 Basically, after your first door choice, the host choses one door with a goat and asks if you want to change door. The main question is: what gives a higher probability of winning? switching door or not switching?
 
@@ -41,4 +44,4 @@ The links for the apps and the report are below. All the code is shared on githu
 * App for the simulation: <a href="https://ricardosc.shinyapps.io/MontyHallSim/" target='_blank' class="btn btn--warning btn--small">Monty Hall Simulation App</a>
 * App for the game: <a href="https://ricardosc.shinyapps.io/MontyHallGame/" target='_blank' class="btn btn--warning btn--small">Monty Hall Game App</a>
 
-For more information about the Monty Hall problem, go to https://en.wikipedia.org/wiki/Monty_Hall_problem.
+For more information about the Monty Hall problem, go to <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem/" target='_blank'>"Wikipedia - Monty Hall Problem"</a>.
