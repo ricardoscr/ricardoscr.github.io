@@ -2,7 +2,7 @@
 title: "Predict the Next Word"
 excerpt: "Project of a Web application that predicts the next word based on previous text input."
 header:
-  teaser: netx-word.png
+  teaser: next-word.png
 gallery:
   - url: next-word-app.png
     image_path: next-word-app.png
