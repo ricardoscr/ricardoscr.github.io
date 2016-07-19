@@ -3,9 +3,6 @@ main:
   - title: "About"
     url: /about/
 
-  - title: "Posts in English"
-    url: /en/
-
   - title: "Posts em Português"
     url: /pt/
 
