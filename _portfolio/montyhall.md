@@ -44,4 +44,4 @@ The links for the apps and the report are below. All the code is shared on githu
 * App for the simulation: <a href="https://ricardosc.shinyapps.io/MontyHallSim/" target='_blank' class="btn btn--warning btn--small">Monty Hall Simulation App</a>
 * App for the game: <a href="https://ricardosc.shinyapps.io/MontyHallGame/" target='_blank' class="btn btn--warning btn--small">Monty Hall Game App</a>
 
-For more information about the Monty Hall problem, go to <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem/" target='_blank'>"Wikipedia - Monty Hall Problem"</a>.
+For more information about the Monty Hall problem, go to <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target='_blank'>"Wikipedia - Monty Hall Problem"</a>.
