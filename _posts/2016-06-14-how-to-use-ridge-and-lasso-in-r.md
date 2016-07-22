@@ -22,7 +22,7 @@ In a linear regression, in practice it means we are minimizing the RSS (Residual
 
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2 $$
 
-where $$\lambda$$ is the tuning parameter or penalty factor, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
+where $$\lambda$$ is the tuning parameter, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
 
 To perform Ridge Regression in R, we will use the glmnet package, developed by the creators of the algorithm.
 
@@ -59,7 +59,7 @@ In a linear regression, in practice for the Lasso, it means we are minimizing th
 
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} |\beta_j| $$
 
-where $$\lambda$$ is the tuning parameter or penalty factor, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
+where $$\lambda$$ is the tuning parameter, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
 
 To perform Lasso in R, we will use the glmnet package, developed by the creators of the algorithm.
 
