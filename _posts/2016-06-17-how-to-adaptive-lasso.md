@@ -35,12 +35,6 @@ Therefore, seeing that the Lasso is not an oracle procedure, Adaptive Lasso was 
 
 ## Adaptive Lasso
 
-O Adaptive Lasso é uma evolução do Lasso que possui as propriedades de oráculo (para uma escolha adequada de $$\lambda$$).
-
-Adaptive Lasso, como método de regularização, evita overfitting penalizando coeficientes grandes. Além disso, possui o mesmo diferencial que o Lasso: pode encolher alguns dos coeficientes a exatamente zero, realizando, portanto, uma seleção de atributos com a regularização.
-
-Em uma regressão linear, o Adaptive Lasso busca minimizar:
-
 Adaptive Lasso is an evolution of the Lasso that has the oracle properties (for a suitable choice of $$\lambda$$).
 
 Adaptive Lasso, as a regularization method, avoids overfitting penalizing large coefficients. Besides, it has the same advantage that Lasso: it can shrink some of the coefficients to exactly zero, performing thus a selection of attributes with the regularization.
