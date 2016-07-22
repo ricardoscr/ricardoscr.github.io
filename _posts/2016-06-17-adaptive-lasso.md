@@ -27,7 +27,7 @@ Um procedimento oráculo é aquele que possui as seguintes propriedades de orác
 - Identificar o subconjunto de variáveis dito verdadeiro; e
 - Possuir taxa de predição/estimação ótima.
 
-Há trabalhos <a href='http://www.stat.wisc.edu/~shao/stat992/zou2006.pdf'>(Zou 2006)</a> que evidenciam que o Lasso não possui as propriedades de oráculo. Vê-se que há casos onde um $$\lambda$$ que leva a taxa de predição ótima acaba com seleção de inconsistente de variáveis (por exemplo, com variáveis de ruído). Assim como há também casos de estimativas enviesadas para coeficientes grandes, levando a taxas de predição subótimas.
+Há trabalhos <a href='http://pages.cs.wisc.edu/~shao/stat992/zou2006.pdf'>(Zou 2006)</a> que evidenciam que o Lasso não possui as propriedades de oráculo. Vê-se que há casos onde um $$\lambda$$ que leva a taxa de predição ótima acaba com seleção de inconsistente de variáveis (por exemplo, com variáveis de ruído). Assim como há também casos de estimativas enviesadas para coeficientes grandes, levando a taxas de predição subótimas.
 
 Portanto, vendo que o Lasso não é um procedimento oráculo, foi desenvolvido o Adaptive Lasso.
 
