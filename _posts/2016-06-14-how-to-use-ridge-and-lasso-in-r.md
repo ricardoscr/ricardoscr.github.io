@@ -8,7 +8,7 @@ lang: en-US
 mathjax: true
 ---
 
-De uma maneira bem simples e direta ao ponto, após uma breve introdução dos métodos, vamos ver como executar no R Regressão Ridge e Lasso!
+In a very simple and direct way, after a brief introduction of the methods, we will see how to run Ridge Regression and Lasso using R!
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
@@ -16,55 +16,64 @@ De uma maneira bem simples e direta ao ponto, após uma breve introdução dos m
 
 ## Ridge Regression in R
 
-Regressão Ridge é um método de regularização que evita overfitting penalizando coeficientes grandes através da L2 Norm. Por isso, é também chamada de Regularização L2.
+Ridge Regression is a regularization method that tries to avoid overfitting, penalizing large coefficients through the L2 Norm. For this reason, it is also called L2 Regularization.
 
-Em uma regressão linear, na prática isso implica em minimizar SQE (Soma dos Quadrados dos Resíduos) ou RSS (Residual Sum of Squares) somado à L2 Norm. Dessa forma, buscamos minimizar:
+In a linear regression, in practice it means we are minimizing the RSS (Residual Sum of Squares) added to the L2 Norm. Thus, we seek to minimize:
 
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} \beta_j^2 $$
 
-onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade, $$\beta_j$$ são os coeficientes estimados em quantidade $$p$$.
+where $$\lambda$$ is the tuning parameter or penalty factor, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
 
-Para executar Regressão Ridge no R, faremos uso do pacote glmnet, desenvolvido pelos próprios criadores dos algoritmos.
+To perform Ridge Regression in R, we will use the glmnet package, developed by the creators of the algorithm.
 
 ```R
 require(glmnet)
-# Considerando que tenho um data frame de nome dados, sendo a primeira coluna a classe
-x <- as.matrix(dados[,-1]) # Remove classe
-y <- as.double(as.matrix(dados[, 1])) # Somente classe
+# Data = considering that we have a data frame named dataF, with its first column being the class
+x <- as.matrix(dataF[,-1]) # Removes class
+y <- as.double(as.matrix(dataF[, 1])) # Only class
+
+# Fitting the model (Ridge: Alpha = 0)
 set.seed(999)
 cv.ridge <- cv.glmnet(x, y, family='binomial', alpha=0, parallel=TRUE, standardize=TRUE, type.measure='auc')
+
+# Results
 plot(cv.ridge)
 cv.ridge$lambda.min
 cv.ridge$lambda.1se
 coef(cv.ridge, s=cv.ridge$lambda.min)
 ```
 
-No código acima executamos regressão logística (perceba o family='binomial'), paralelizando (caso cluster ou cores tenham sido alocados previamente), internamente normalizando (é necessário para regularização mais adequada) e buscando observar medida de AUC (área sob curva ROC) nos resultados. Além disso, o método já executa 10-fold cross validation para escolher o melhor $$\lambda$$.
+In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $$\lambda$$.
 
-Ao final já passo alguns comandos úteis para verificação dos resultados, como exibição do gráfico dos resultados de AUC e valores de $$\lambda$$ mínimo (para AUC mínimo) e 1se (para AUC menor um desvio padrão do mínimo).
+At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $$\lambda$$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation).
 
 ---
 
 ## Lasso in R
 
-Agora vamos mexer com o Lasso! Lasso também é um método de regularização que evita overfitting penalizando coeficientes grandes, mas usa a L1 Norm. Por isso, é também chamada de Regularização L1.
+Now let's move to the Lasso! Lasso is also a regularization method that tries to avoid overfitting penalizing large coefficients, but it uses the L1 Norm. For this reason, it is also called L1 Regularization.
 
-Esse método tem como grande diferencial o fato de poder encolher alguns dos coeficientes a exatamente zero, realizando, portanto, uma seleção de atributos com a regularização.
+This method has as great advantage the fact that it can shrink some of the coefficients to exactly zero, performing thus a selection of attributes with the regularization.
 
-Em uma regressão linear, na prática para o Lasso busca-se minimizar SQE (Soma dos Quadrados dos Resíduos) ou RSS (Residual Sum of Squares) somado à L1 Norm. Dessa forma, realizamos a minimização de:
+In a linear regression, in practice for the Lasso, it means we are minimizing the RSS (Residual Sum of Squares) added to the L1 Norm. Thus, we seek to minimize:
 
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} |\beta_j| $$
 
-onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade, $$\beta_j$$ são os coeficientes estimados em quantidade $$p$$.
+where $$\lambda$$ is the tuning parameter or penalty factor, $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them.
 
-Para executar Lasso no R, faremos uso do pacote glmnet, desenvolvido pelos próprios criadores dos algoritmos.
+To perform Lasso in R, we will use the glmnet package, developed by the creators of the algorithm.
 
 ```R
 require(glmnet)
-# Considerando que tenho um data frame de nome dados, sendo a primeira coluna a classe
-x <- as.matrix(dados[,-1]) # Remove classe
-y <- as.double(as.matrix(dados[, 1])) # Somente classe
+# Data = considering that we have a data frame named dataF, with its first column being the class
+x <- as.matrix(dataF[,-1]) # Removes class
+y <- as.double(as.matrix(dataF[, 1])) # Only class
+
+# Fitting the model (Lasso: Alpha = 1)
+set.seed(999)
 cv.lasso <- cv.glmnet(x, y, family='binomial', alpha=1, parallel=TRUE, standardize=TRUE, type.measure='auc')
+
+# Results
 plot(cv.lasso)
 plot(cv.lasso$glmnet.fit, xvar="lambda", label=TRUE)
 cv.lasso$lambda.min
@@ -72,15 +81,15 @@ cv.lasso$lambda.1se
 coef(cv.lasso, s=cv.lasso$lambda.min)
 ```
 
-No código acima executamos regressão logística (perceba o family='binomial'), paralelizando (caso cluster ou cores tenham sido alocados previamente), internamente normalizando (é necessário para regularização mais adequada) e buscando observar medida de AUC (área sob curva ROC) nos resultados. Além disso, o método já executa 10-fold cross validation para escolher o melhor $$\lambda$$.
+In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $$\lambda$$.
 
-Ao final já passo alguns comandos úteis para verificação dos resultados, como exibição do gráfico dos resultados de AUC e valores de $$\lambda$$ mínimo (para AUC mínimo) e 1se (para AUC menor um desvio padrão do mínimo).
+At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $$\lambda$$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation).
 
 ---
 
-Como o post já ficou grande, em uma outra oportunidade falarei do Adaptive Lasso, uma evolução do Lasso que busca satisfazer a propriedade de Oráculo.
+Since this post is already long, in another post I will talk about the Adaptive Lasso, an evolution of the Lasso seeking to satisfy the Oracle property.
 
 
-É isso, espero que tenha ficado claro!
+That's it, I hope it's enough!
 
-Qualquer dúvida, sugestão: comente!
+Any questions, suggestions: feel free to comment!
