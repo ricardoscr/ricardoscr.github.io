@@ -8,11 +8,11 @@ lang: en-US
 mathjax: true
 ---
 
-Adaptive Lasso é uma evolução do Lasso. Vamos ver sucintamente como ele aprimora o Lasso e mostrar o código para executá-lo no R!
+Adaptive Lasso is an evolution of the Lasso. Let's see briefly how it improves Lasso and show the code needed to run it in R!
 
 ---
 
-Lasso foi introduzido <a href='http://ricardoscr.github.io/como-usar-ridge-e-lasso-no-r.html'>neste outro post</a>, caso não conheça o método, por favor, leia-o <a href='http://ricardoscr.github.io/como-usar-ridge-e-lasso-no-r.html'>aqui</a> antes!
+Lasso was introduced <a href='http://ricardoscr.github.io/how-to-use-ridge-and-lasso-in-r.html'>in this post</a>, in case you don't know the method, please read about it <a href='http://ricardoscr.github.io/how-to-use-ridge-and-lasso-in-r.html'>here</a> before!
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
@@ -20,16 +20,16 @@ Lasso foi introduzido <a href='http://ricardoscr.github.io/como-usar-ridge-e-las
 
 ## Oracle Procedure
 
-Antes de entramos no Adaptive Lasso é importante saber o que é um procedimento dito "Oráculo".
+Before we enter the Adaptive Lasso it is important to know what is a procedure known as "Oracle".
 
-Um procedimento oráculo é aquele que possui as seguintes propriedades de oráculo:
+An oracle procedure is one that has the following oracle properties:
 
-- Identificar o subconjunto de variáveis dito verdadeiro; e
-- Possuir taxa de predição/estimação ótima.
+- Identifies the right subset of true variables; and
+- Has optimal estimation rate.
 
-Há trabalhos <a href='http://www.stat.wisc.edu/~shao/stat992/zou2006.pdf'>(Zou 2006)</a> que evidenciam que o Lasso não possui as propriedades de oráculo. Vê-se que há casos onde um $$\lambda$$ que leva a taxa de predição ótima acaba com seleção de inconsistente de variáveis (por exemplo, com variáveis de ruído). Assim como há também casos de estimativas enviesadas para coeficientes grandes, levando a taxas de predição subótimas.
+Some studies <a href='http://pages.cs.wisc.edu/~shao/stat992/zou2006.pdf'>(Zou 2006)</a> state that the Lasso does not have the oracle properties. They claim that there are cases where a given $$\lambda$$ that leads to optimal estimation rate ends up with inconsistent selection of variables (for example, includes noise variables). Similarly, there are also cases with the right selection of variables but showing biased estimates for large coefficients, leading to suboptimal prediction rates.
 
-Portanto, vendo que o Lasso não é um procedimento oráculo, foi desenvolvido o Adaptive Lasso.
+Therefore, seeing that the Lasso is not an oracle procedure, Adaptive Lasso was developed to address this issue.
 
 ---
 
@@ -41,36 +41,42 @@ Adaptive Lasso, como método de regularização, evita overfitting penalizando c
 
 Em uma regressão linear, o Adaptive Lasso busca minimizar:
 
+Adaptive Lasso is an evolution of the Lasso that has the oracle properties (for a suitable choice of $$\lambda$$).
+
+Adaptive Lasso, as a regularization method, avoids overfitting penalizing large coefficients. Besides, it has the same advantage that Lasso: it can shrink some of the coefficients to exactly zero, performing thus a selection of attributes with the regularization.
+
+In a linear regression, the Adaptive Lasso seeks to minimize:
+
 $$ RSS(\beta) + \lambda \sum_{j=1}^{p} \hat{\omega_j} |\beta_j| $$
 
-onde $$\lambda$$ é o parâmetro de tuning ou ajuste da penalidade (definido através de 10-fold cross validation), $$\beta_j$$ são os coeficientes estimados em quantidade $$p$$. Além disso, vemos o $$\hat{\omega_j}$$, chamado Vetor Adaptativo de Pesos, o diferencial do Adaptive Lasso.
+where $$\lambda$$ is the tuning parameter (chosen through 10-fold cross validation), $$\beta_j$$ are the estimated coefficients, existing $$p$$ of them. Furthermore, we see $$\hat{\omega_j}$$, called Adaptive Weights vector, the edge of the Adaptive Lasso.
 
-Com $$\hat{\omega_j}$$ acabamos realizando uma regularização diferente para cada coeficiente, ou seja, esse vetor adapta a penalidade para cada coeficiente. O Vetor Adaptativo de Pesos é definido como:
+With $$\hat{\omega_j}$$ we are performing a different regularization for each coefficient, i.e., this vector adjusts the penalty differently for each coefficient. The Adaptive Weights vector is defined as:
 
 $$\hat{\omega_j} = \frac{1}{\left(|\hat{\beta_j}^{ini}|\right)^{\gamma}}$$
 
-Na equação acima $$\hat{\beta_j}^{ini}$$ é uma estimativa inicial dos coeficientes, usualmente obtida através de <a href='http://ricardoscr.github.io/como-usar-ridge-e-lasso-no-r.html'>Regressão Ridge</a>. Assim o Adaptive lasso acaba penalizando mais coeficientes com estimativa inicial menor. 
+In the above equation $$\hat{\beta_j}^{ini}$$ is an initial estimate of the coefficients, usually obtained through <a href='http://ricardoscr.github.io/how-to-use-ridge-and-lasso-in-r.html'>Ridge Regression</a>. So Adaptive Lasso ends up penalizing more those coefficients with lower initial estimates.
 
-Já o $$\gamma$$ do vetor adaptativo de pesos é uma constante positiva para ajuste do vetor adaptativo de pesos, sendo que os autores sugerem os valores possíveis de 0.5, 1 e 2.
+Whereas $$\gamma$$ is a positive constant for adjustment of the Adaptive Weights vector, and the authors suggest the possible values of 0.5, 1 and 2.
 
 ---
 
 ## Adaptive Lasso in R
 
-Para executar Adaptive Lasso no R, faremos uso do pacote glmnet, realizando a <a href='http://ricardoscr.github.io/como-usar-ridge-e-lasso-no-r.html'>Regressão Ridge</a> para criar o Vetor Adaptativo de Pesos, como mostrado a seguir.
+To run Adaptive Lasso in R, we will use the glmnet package, performing <a href='http://ricardoscr.github.io/how-to-use-ridge-and-lasso-in-r.html'>Ridge Regression</a> to create the Adaptive Weights vector, as shown below.
 
 ```R
 require(glmnet)
-## Considerando que tenho um data frame de nome dados, sendo a primeira coluna a classe
-x <- as.matrix(dados[,-1]) # Remove classe
-y <- as.double(as.matrix(dados[, 1])) # Somente classe
+## Data = considering that we have a data frame named dataF, with its first column being the class
+x <- as.matrix(dataF[,-1]) # Removes class
+y <- as.double(as.matrix(dataF[, 1])) # Only class
 
-## Ridge Regression para Vetor Adaptativo de Pesos
+## Ridge Regression to create the Adaptive Weights Vector
 set.seed(999)
 cv.ridge <- cv.glmnet(x, y, family='binomial', alpha=0, parallel=TRUE, standardize=TRUE)
 w3 <- 1/abs(matrix(coef(cv.ridge, s=cv.ridge$lambda.min)
-[, 1][2:(ncol(x)+1)] ))^1 ## Definindo gamma = 1
-w3[w3[,1] == Inf] <- 999999999 ## Jogando valores estimados com Infinito para 999999999
+[, 1][2:(ncol(x)+1)] ))^1 ## Using gamma = 1
+w3[w3[,1] == Inf] <- 999999999 ## Replacing values estimated as Infinite for 999999999
 
 ## Adaptive Lasso
 set.seed(999)
@@ -81,17 +87,17 @@ abline(v = log(cv.lasso$lambda.min))
 abline(v = log(cv.lasso$lambda.1se))
 coef(cv.lasso, s=cv.lasso$lambda.1se)
 coef <- coef(cv.lasso, s='lambda.1se')
-atributos_selecionados <- (coef@i[-1]+1) ## Considerando o data frame dados como mostrado no início
+selected_attributes <- (coef@i[-1]+1) ## Considering the structure of the data frame dataF as shown earlier
 ```
 
-No código acima executamos regressão logística (perceba o family='binomial'), paralelizando (caso cluster ou cores tenham sido alocados previamente), internamente normalizando (é necessário para regularização mais adequada) e buscando observar medida de AUC (área sob curva ROC) nos resultados do Adaptive Lasso. Além disso, o método já executa 10-fold cross validation para escolher o melhor $$\lambda$$.
+In the above code, we execute logistic regression (note the family='binomial'), in parallel (if a cluster or cores have been previously allocated), internally standardizing (needed for more appropriate regularization) and wanting to observe the results of AUC (area under ROC curve). Moreover, the method already performs 10-fold cross validation to choose the best $$\lambda$$.
 
-Fixando $$\gamma = 1$$ (útil variar entre os valores sugeridos: 0.5, 1 e 2), aplicamos o Vetor Adaptativo de Pesos através da função cv.glmnet com o argumento **penalty.factor**.
+Fixing $$\gamma = 1$$ (might be useful to vary it between the suggested values: 0.5, 1 and 2), we apply the Adaptive Weights vector on the cv.glmnet function using the argument **penalty.factor**.
 
-Ao final já passo alguns comandos úteis para verificação dos resultados, como exibição do gráfico dos resultados de AUC, valores de $$\lambda$$ mínimo (para AUC mínimo) e 1se (para AUC menor um desvio padrão do mínimo), além de gráfico mostrando a regularização feita.
+At the end, there are some useful commands to verify the results, like plots of the AUC results and values of minimum $$\lambda$$ (for minimum AUC) and 1 std. error (for AUC lower than minimum by one standard deviation), besides plot of the regularization perfomed.
 
 ---
 
-É isso, Adaptive Lasso pode ser bem útil, então não hesite em testar!
+That's it! Adaptive Lasso can be very useful, so do not hesitate to test it!
 
-Qualquer dúvida, sugestão: comente!
+Any questions, suggestions: please comment!
