@@ -1,6 +1,6 @@
 ---
 title: "Twitter Sentiment Analysis"
-excerpt: "Web app that does sentiment analysis of the most recent tweets in English for a given hashtag."
+excerpt: "Web app that does sentiment analysis of the most recent tweets in English with a given hashtag."
 header:
   teaser: twitter-sent.png
 ---
