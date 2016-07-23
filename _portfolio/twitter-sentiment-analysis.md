@@ -1,15 +1,15 @@
 ---
 title: "Twitter Sentiment Analysis"
-excerpt: "Python web app with sentiment analysis of most recent tweets in English for a given hashtag."
+excerpt: "Web app that does sentiment analysis of the most recent tweets in English for a given hashtag."
 header:
   teaser: twitter-sent.png
 ---
 
-The app does sentiment analysis of the most recent tweets (up to a 100) in English containing a given hashtag!
-
-It was built using Python and Flask.
+The app does sentiment analysis of the most recent tweets (up to a 100) that are written in English and contain a given hashtag!
 
 With this you can assess if a given fact/person/event is having positive or negative effects on twitter!
+
+It was built using Python and Flask.
 
 ---
 
