@@ -19,7 +19,7 @@ As other explorations became available, this page will be updated.
 
 ## Analysis and Modeling of Breast Cancer Data
 
-This first analysis uses a dataset containing information about breast cancer. The idea is to perform an exploratory analysis of the information contained in the dataset, figuring out ways of making the dataset tidier. The ultimate objective is to, in the end, build and compare models to predict if a given tumor is benign or malignant (breast cancer) using the information available on this dataset. Some functions created for this purpose are included in the appendix.
+This first analysis uses a dataset containing information about breast cancer. The idea is to perform an exploratory analysis of the information contained in the dataset, figuring out ways of making the dataset tidier. The ultimate objective is to build and compare models to predict if a given tumor is benign or malignant (breast cancer).
 
 The analysis show that, with a Random Forest model, we can predict if a given tumor is malignant with 97.86% of Accuracy. This result is 1.96% higher than the Accuracy of 95.90% reported in the UCI Machine Learning as the highest for this dataset. We also conclude that the most important information for this prediction is the ‘uniformity of the cell size’.
 
@@ -29,7 +29,7 @@ The analysis show that, with a Random Forest model, we can predict if a given tu
 
 ## Time Series Analysis of Milk Production
 
-This analysis is intended to explain the Time Series analysis performed on a dataset containing information about Milk Production. The idea is to analyze trend and seasonality of the production of Milk from 1995 until 2013, decomposing the time series and analysing the remainder. After that we also create a model to forecast the production of 2014.
+This work is intended to explain a Time Series analysis performed on a dataset containing information about Milk Production. The idea is to analyze trend and seasonality of the production of Milk from 1995 until 2013, decomposing the time series and analysing the remainder. After that we also create a model to forecast the production of 2014.
 
 The analysis show that the time series is not stationary, as it has a trend, and that after removing trend and season efftects, the remainder of the decomposition is ARMA(1,0). The forecasting for 2014 showed good results with milk production data with confidence intervals reasonably small compared to the means.
 
