@@ -45,5 +45,3 @@ To explore a dataset containing information about cars, three reports were creat
 * Report 2: <a href="http://rpubs.com/ricardosc/auto-categorical-variables" target='_blank' class="btn btn--info btn--small">Analysis of Categorical Variables of Auto Data</a>
 * Report 3: <a href="http://rpubs.com/ricardosc/auto-exploration" target='_blank' class="btn btn--info btn--small">Exploratory Analysis of Auto Data</a>
 
----
-
