@@ -2,7 +2,7 @@
 title: "Exploratory Analysis of Several Datasets"
 excerpt: "Describes several reports of different exploratory data analysis."
 header:
-  teaser: montyhall.png
+  teaser: exploratory.png
 ---
 
 This page gathers several exploratory data analysis and their respective reports created using R Markdown.
