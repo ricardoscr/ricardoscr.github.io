@@ -1,10 +1,10 @@
 # main links links
 main:
-  - title: "About"
-    url: /about/
+  - title: "Sobre"
+    url: /sobre/
 
-  - title: "Posts em Português"
-    url: /pt/
+  - title: "Posts in English"
+    url: /en/
 
-  - title: "Portfolio"
-    url: /portfolio/
+  - title: "Projetos"
+    url: /projetos/
