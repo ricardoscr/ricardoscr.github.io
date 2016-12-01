@@ -218,7 +218,7 @@ defaults:
       share: true
       related: true
   
-  # _portfolio
+  # _projetos
   - scope:
       path: ""
       type: projetos
@@ -228,7 +228,7 @@ defaults:
       share: true
 
 collections:
-  portfolio:
+  projetos:
     output: true
     permalink: /:collection/:path/
 
