@@ -1,17 +1,14 @@
 ---
-title: "About"
+title: "Sobre"
 layout: single
-permalink: /about/
+permalink: /sobre/
 author_profile: true
 ---
 
-- Computer Engineer from ITA (Instituto Tecnológico de Aeronáutica) - Class of 2011
-- Master's Degree in Applied Computing from UnB (Universidade de Brasília) - Class of 2013
-- Data scientist working for the Brazilian government since 2012
+- Engenheiro da Computação formado pelo ITA (Instituto Tecnológico de Aeronáutica) - Turma de 2011
+- Mestrado em Computacão Aplicada com foco em Machine Learning pela UnB (Universidade de Brasília) - Turma de 2013
+- Especialização em Data Science pela Johns Hopkins University via Coursera
+- Certificação em Data Science pela Universidade de Washington - Turma de 2016
 
 
-Interested in all kinds of data science and machine learning applications.
-
-**Main contact**: ricardosc at gmail
-
-**Connect on**: [LinkedIn](https://www.linkedin.com/in/ricardoscr){: .btn .btn--inverse .btn--small}
+**Contato principal**: ricardosc at gmail
